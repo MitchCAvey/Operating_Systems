@@ -22,10 +22,9 @@ create_dir() {
 
 # Build STEM structure
 build_stem_structure() {
-  local base="$HOME/Documents/STEM/Technology/Software_Development"
-  declare -a categories=("Projects")
-  declare -a subdirs1=("Personal")
-  declare -a subdirs2=("Micro_Services" "Research_Docs" "Standalone_Apps" "Video_Games" "Web_Apps")
+  local base="$HOME/Documents/STEM"
+  declare -a categories=("Science" "Technology" "Engineering" "Mathematics")
+  declare -a tech_subdirs=("Com_Sci" "DevOps" "IT_Support" "Software_Development")
 
   echo "Building base structure in: $base"
   for cat in "${categories[@]}"; do
@@ -33,13 +32,8 @@ build_stem_structure() {
   done
 
   echo "Adding subdirectories under Technology..."
-  for sub1 in "${subdirs1[@]}"; do
-    create_dir "$base/Projects/$sub1"
-  done
-
-  echo "Adding subdirectores under Operating_Systems"
-  for sub2 in "${subdirs2[@]}"; do
-      create_dir "$base/Projects/Personal/$sub2"
+  for sub in "${tech_subdirs[@]}"; do
+    create_dir "$base/Technology/$sub"
   done
 }
 
