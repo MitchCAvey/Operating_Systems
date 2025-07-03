@@ -6,14 +6,17 @@
 testuser=NoSuchUser
 #testuser=mitchavey
 
-if grep $testuser /etc/passwd
+if [ $USER = "mitchavey" ] 
 then
-	echo "The user $testuser exists on this system"
-elif ls -d /home/$testuser
+	echo "Welcome $USER"
+	echo "Please enjoy your visit"
+elif [ $USER = "barbara" ] 
 then
-	echo "The user $testuser does not exist on this system."
-	echo "However, $testuser has a directory."
+	echo "Welcome $USER"
+	echo "Please enjoy your visit"
+elif [ $USER = "root" ]
+then
+	echo "Do not forget to logout when you're done"
 else
-	echo "The user $testuser does not exist on this system."
-	echo "And, $testuser does not have a directory."
+	echo "Sorry, you are not allowed here"
 fi
