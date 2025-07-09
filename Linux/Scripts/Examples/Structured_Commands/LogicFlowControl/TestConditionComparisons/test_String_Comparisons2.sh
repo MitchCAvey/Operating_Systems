@@ -1,16 +1,11 @@
 #!/bin/bash
-# Correctly usig string comparisons 
+# Testing string equality
 #
-
-val1=baseball
-val2=hockey
-
-if [$var1 \> $var2 ]
+testuser=baduser
+#
+if [ $USER != $testuser ]
 then
-	echo "$val1 is greater than $val2"
+	echo "This is not $testuser"
 else
-	echo "$var1 is less than $var2"
+	echo "Welcome $testuser"
 fi
-
-
-
