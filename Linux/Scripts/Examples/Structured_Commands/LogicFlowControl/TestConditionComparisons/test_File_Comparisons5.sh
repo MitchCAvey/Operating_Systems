@@ -1,31 +1,21 @@
 #!/bin/bash
-# Check if either a directory or file exists
+# Testing if a file is empty
 #
-item_name="$SHELLSCRIPTS/Examples/Structured_Commands/LogicFlowControl/TestConditionComparisons/sentinel"
-echo
-echo "The item being checked: $item_name"
-echo
-#
-if [ -e $item_name ]
-then # Item does exist
-	echo "The item, $item_name, does exist."
-	echo "But is it a file?"
-	echo
-	if [ -f $item_name ]
+file_name=$SHELLSCRIPTS/Examples/Structured_Commands/LogicFlowControl/TestConditionComparisons/sentinel
+
+if [ -f $file_name ]
+then
+	if [ -s $file_name ]
 	then
-		echo "Yes, $item_name is a file."
-		echo "But is it writable?"
-		if [ -w $item_name ]
-		then
-			echo "Writing current time to $item_name"
-			date +%H%M >> $item_name
-		else
-			echo "Unable to write to $item_name"
-		fi
-	else # Item is a file
-		echo "No, $item_name is a file"
+		echo "The $file_name file exists and has data in it."
+		echo "Will not remove this file."
+	else
+		echo "The $file_name file exists, but is empty."
+		echo "Deleting empty file..."
+		rm $file_name
 	fi
-else # Item does not exist
-	echo "the item, $item_name, does not exist."
-	echo "Nothing to update"
+else
+	echo "File, $file_name, does not exist."
 fi
+
+
