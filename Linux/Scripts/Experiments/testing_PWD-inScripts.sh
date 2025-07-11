@@ -1,3 +1,5 @@
 #!/bin/bash
 
-pwd
+current_pwd=$(pwd)
+
+echo $current_pwd
