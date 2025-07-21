@@ -13,13 +13,32 @@ currentLocal=$(pwd)
 
 if [ -d $currentLocal/Experiments ]
 then
-	echo "Your current working directory is: $curentLocal/Experiments"
+	#echo "Your current working directory is: $curentLocal/Experiments"
 	echo
 
-	if [ -f $currentLocal/Experiments/$filename ] 
+	#pwd
+
+	cd $currentLocal/Experiments
+	#pwd
+
+	if [ -f $filename ] && [ -s $filename ] 
 	then
-		ls -laui $currentLocal/Experiments/$filename
+		#ls -laui $currentLocal/Experiments/$filename
+		#cat $filename
+
+		for state in $(cat $filename)
+		do
+			echo "You've visited this state: $state"
+		done
 	else
 		echo "The filename you provided ($filename) doesn't exist"
+
+		touch $filename ; echo $stateList > $filename
+
+
+		echo
+		echo "File has been created, please run script again"
+		pwd ; echo ; ls -laui $filename 
+		echo
 	fi
 fi
