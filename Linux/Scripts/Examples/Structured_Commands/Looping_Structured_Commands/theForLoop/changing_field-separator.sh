@@ -4,11 +4,11 @@
 # Assumes this file is store in same directory as this script
 #
 
-filename="states"
+filename="states.txt"
 
-IFS=$'\n'
+IFS=$' '
 
-for state in $(cat $file)
+for state in $(cat $filename)
 do
 	echo "Visit beautiful $state"
 done

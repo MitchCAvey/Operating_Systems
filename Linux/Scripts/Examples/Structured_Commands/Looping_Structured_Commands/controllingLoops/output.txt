@@ -1,0 +1,3 @@
+/home/mitchavey/Documents is a directory
+/home/mitchavey/Downloads is a directory
+/home/mitchavey/envs is a directory
