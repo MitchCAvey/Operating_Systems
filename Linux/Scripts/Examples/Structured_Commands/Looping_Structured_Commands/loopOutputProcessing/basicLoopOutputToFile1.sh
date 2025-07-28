@@ -38,12 +38,14 @@ echo -e "Your current Directory is: $curDir"
 
 #echo $(ls -laui $curDir/controllingLoops)
 
-for file in $(ls -laui $curDir/controllingLoops)
+for file in $(ls -laui $curDir)
 do
-    #echo -e "$file \n"
+    echo -e "$file \n"
     if [ -f "$file" ]
     then
 	echo -e "Marked File: $file \n"
+    else
+	$(ls -laui $file)
     fi
 done
 
