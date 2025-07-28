@@ -1,0 +1,8 @@
+This Is A File: basicForLoopOutputToFile-test.sh 
+This Is A File: basicForLoopOutputToFile1.sh 
+This Is A File: basicForLoopOutputToFile2.sh 
+This Is A File: basicLoopOutputToFile1.sh 
+This Is A File: basicPipingLoopOutputToFile.sh 
+This Is A File: currentFileList.txt 
+This Is A File: output.txt 
+This Is A File: randomTest.sh 
