@@ -10,16 +10,12 @@ curDir=$(pwd)
 
 echo -e "Your current directory is: $curDir \n"
 
-for file in $(ls -laui $curDir/controllingLoops) 
+#ls -laui $curDir
+
+for file in $(ls $curDir)
 do
-	if [ -d "$file" ]
-	then
-		echo "$file is a directory"
-	elif [ -f "$file" ]
-	then
-		echo "$file is a file"
-	fi
-done > output.txt
+    echo "$file"
+done
 
 IFS=$IFSOLD
 
