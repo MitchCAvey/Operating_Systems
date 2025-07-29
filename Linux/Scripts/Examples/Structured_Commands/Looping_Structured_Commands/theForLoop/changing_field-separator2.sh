@@ -9,7 +9,8 @@ line="one two three"
 
 for word in $(cat testFile.txt)
 do
-    echo "$word,"
+    IFS=','
+    echo "${word[*]}"
 done
 
 IFS=$IFSOLD
